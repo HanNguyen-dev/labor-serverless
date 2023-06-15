@@ -25,9 +25,11 @@ func getInflation() string {
 
 func HandleRequest(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
 	response := getInflation()
-	ApiResponse := events.APIGatewayProxyResponse{}
-	ApiResponse = events.APIGatewayProxyResponse{
-		Headers:    map[string]string{"Content-Type": "application/json"},
+	ApiResponse := events.APIGatewayProxyResponse{
+		Headers: map[string]string{
+			"Content-Type":                "application/json",
+			"Access-Control-Allow-Origin": os.Getenv("CORS"),
+		},
 		Body:       response,
 		StatusCode: 200,
 	}
