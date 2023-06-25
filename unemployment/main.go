@@ -7,7 +7,7 @@ import (
 )
 
 func HandleRequest(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
-	blsResponse, err := api.GetInflation()
+	blsResponse, err := api.GetUnemployment()
 	return api.GetAWSResponse(blsResponse, err), nil
 }
 
