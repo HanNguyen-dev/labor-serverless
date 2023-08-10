@@ -1,4 +1,4 @@
-package bls
+package model
 
 type FootNotes []struct {
 	Code string `json:"code"`
@@ -19,9 +19,13 @@ type SeriesData struct {
 	Data     DataPoints `json:"data"`
 }
 
-type CpiResponse struct {
-	Status       string     `json:"status"`
-	ResponseTime int        `json:"responseTime"`
-	Message      []string   `json:"message"`
-	Results      SeriesData `json:"Results"`
+type Series struct {
+	Series []SeriesData `json:"series"`
+}
+
+type BLSResponse struct {
+	Status       string   `json:"status"`
+	ResponseTime int      `json:"responseTime"`
+	Message      []string `json:"message"`
+	Results      Series   `json:"Results"`
 }

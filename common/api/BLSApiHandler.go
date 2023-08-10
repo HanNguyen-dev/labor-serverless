@@ -12,7 +12,7 @@ var (
 	TIME_SERIES_URL = BLS_URL + "/timeseries/data"
 )
 
-func GetInflation() (string, error) {
+func GetCPI() (string, error) {
 	URL := TIME_SERIES_URL + "/CUUR0000SA0"
 	return BLSApiHandler(URL, "getInflation")
 }
